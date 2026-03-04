@@ -14,7 +14,7 @@ A powerful skill for [nanobot](https://github.com/your-repo/nanobot) (or any com
 
 ### Option 1: Quick Install Script
 ```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/nanobot-skill-gemini-cli/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/bendusy/nanobot-skill-gemini-cli/main/install.sh | bash
 ```
 
 ### Option 2: Manual Install
