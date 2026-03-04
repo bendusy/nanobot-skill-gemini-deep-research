@@ -1,4 +1,4 @@
-# Nanobot Skill: Gemini CLI 🤖🔍
+# Nanobot Skill: Gemini Deep Research 🤖🔍
 
 A powerful skill for [nanobot](https://github.com/your-repo/nanobot) (or any compatible Agent OS) that wraps the local Google Gemini CLI to perform deep web research, bypass news paywalls, and conduct complex contextual analysis.
 
@@ -14,7 +14,7 @@ A powerful skill for [nanobot](https://github.com/your-repo/nanobot) (or any com
 
 ### Option 1: Quick Install Script
 ```bash
-curl -sSL https://raw.githubusercontent.com/bendusy/nanobot-skill-gemini-cli/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/bendusy/nanobot-skill-gemini-deep-research/main/install.sh | bash
 ```
 
 ### Option 2: Manual Install
@@ -22,11 +22,11 @@ curl -sSL https://raw.githubusercontent.com/bendusy/nanobot-skill-gemini-cli/mai
 2. Clone this repository or download the `SKILL.md` file.
 3. Create a folder named `gemini-cli` in your nanobot skills directory:
    ```bash
-   mkdir -p ~/.nanobot/workspace/skills/gemini-cli
+   mkdir -p ~/.nanobot/workspace/skills/gemini-deep-research
    ```
 4. Copy `SKILL.md` into that folder:
    ```bash
-   cp SKILL.md ~/.nanobot/workspace/skills/gemini-cli/
+   cp SKILL.md ~/.nanobot/workspace/skills/gemini-deep-research/
    ```
 
 ## 🚀 Usage Examples (for the Agent)

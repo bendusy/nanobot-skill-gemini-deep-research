@@ -1,5 +1,5 @@
 ---
-name: gemini-cli
+name: gemini-deep-research
 description: Advanced web search, deep research, and paywall-bypassing analysis using the local Gemini CLI agent. Use this as the default and most powerful search tool.
 always: false
 ---
