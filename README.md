@@ -60,3 +60,14 @@ The Gemini CLI includes an `--experimental-acp` flag for advanced Agent-to-Agent
 python3 experimental/test_acp_stdio.py
 ```
 *Note: The ACP protocol format is subject to change by the upstream Gemini CLI project.*
+
+### ACP Protocol Flow Discovered
+Through reverse-engineering, we found that the Gemini CLI implements the `@agentclientprotocol/sdk` (ACP) over `stdio` using JSON-RPC 2.0. The complete flow to execute a prompt is:
+
+1. **`initialize`**: Handshake with `protocolVersion: 1`.
+2. **`session/new`**: Create a new session (requires `cwd` and `mcpServers` array). Returns a `sessionId`.
+3. **`session/prompt`**: Send the prompt using the `sessionId` and an array of `zContentBlock` (e.g., `{"type": "text", "text": "..."}`).
+4. **Streaming Responses**: The CLI streams back `session/update` notifications containing tool calls (like `google_web_search`) and `agent_message_chunk` text blocks.
+5. **Completion**: Returns `{"result": {"stopReason": "end_turn"}}`.
+
+This makes the Gemini CLI a fully compliant, headless Sub-Agent that can be integrated into any MCP/ACP compatible orchestrator!
