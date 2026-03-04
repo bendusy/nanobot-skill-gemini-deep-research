@@ -40,9 +40,8 @@ def main():
     reader_thread.start()
     time.sleep(2)
 
-    # The CLI expects an 'initialize' method first, similar to MCP.
-    # It requires a protocol version number in the params.
-    request = {
+    # Step 1: Initialize the ACP connection
+    init_request = {
         "jsonrpc": "2.0",
         "id": 1,
         "method": "initialize",
@@ -55,8 +54,23 @@ def main():
         }
     }
 
-    print(f"\nSending ACP Initialize Request:\n{json.dumps(request, indent=2)}\n")
-    process.stdin.write(json.dumps(request) + "\n")
+    print(f"\n[1] Sending ACP Initialize Request:\n{json.dumps(init_request, indent=2)}\n")
+    process.stdin.write(json.dumps(init_request) + "\n")
+    process.stdin.flush()
+    time.sleep(2)
+
+    # Step 2: Send a prompt request (based on standard ACP/MCP prompt methods)
+    prompt_request = {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "prompt",
+        "params": {
+            "prompt": "Search the web for the latest news about AI agents and summarize in one sentence."
+        }
+    }
+
+    print(f"\n[2] Sending ACP Prompt Request:\n{json.dumps(prompt_request, indent=2)}\n")
+    process.stdin.write(json.dumps(prompt_request) + "\n")
     process.stdin.flush()
 
     try:
