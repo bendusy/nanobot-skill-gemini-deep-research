@@ -50,3 +50,13 @@ Once installed, the agent can use the `exec` tool to call the Gemini CLI.
 
 ## 📄 License
 MIT License
+
+## 🧪 Experimental: ACP (Agent Control Protocol)
+
+The Gemini CLI includes an `--experimental-acp` flag for advanced Agent-to-Agent communication. We have included a Python test snippet in the `experimental/` directory to demonstrate how to interact with it via `stdio` JSON-RPC.
+
+```bash
+# Run the experimental ACP test
+python3 experimental/test_acp_stdio.py
+```
+*Note: The ACP protocol format is subject to change by the upstream Gemini CLI project.*
